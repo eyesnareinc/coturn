@@ -2,21 +2,8 @@
 FROM debian:bookworm
 
 # Install dependencies
-RUN apt-get update && \
-    apt-get install -y \
-        libevent-dev \
-        libssl-dev \
-        libmicrohttpd-dev \
-        libmysqlclient-dev \
-        libhiredis-dev \
-        libsqlite3-dev \
-        libpq-dev \
-        build-essential \
-        automake \
-        autoconf \
-        libtool \
-        wget \
-        git && \
+RUN apt install coturn \
+turnserver --log-file stdout \
     rm -rf /var/lib/apt/lists/*
 
 # Clone the Coturn repository
