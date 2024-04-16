@@ -5,7 +5,6 @@ FROM debian:bookworm
 RUN apt-get update && \
     apt-get install -y \
         libevent-dev \
-        openssl \
         libssl-dev \
         libmicrohttpd-dev \
         libmysqlclient-dev \
@@ -34,4 +33,5 @@ EXPOSE 3478 5349 49152-65535/udp
 
 # Start Coturn server
 CMD ["turnserver", "--log-file=stdout"]
+
 
