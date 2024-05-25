@@ -28,10 +28,11 @@
  * SUCH DAMAGE.
  */
 
-#if !defined(__MAIN_RELAY__)
+#ifndef __MAIN_RELAY__
 #define __MAIN_RELAY__
 
 #include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -192,6 +193,7 @@ typedef struct _turn_params_ {
   char ca_cert_file[1025];
   char cert_file[1025];
   char pkey_file[1025];
+  bool rpk_enabled;
   char tls_password[513];
   char dh_file[1025];
 
